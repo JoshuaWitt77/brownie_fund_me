@@ -13,14 +13,17 @@ def get_account():
         network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS
         or network.show_active() in FORKED_LOCAL_ENVIRONMENTS
     ):
+        print(f'\n\n We got account[0] \n\n')
         return accounts[0]
     else:
+        print(f'\n\n We got account from config wallets with PRIVATE_KEY \n\n')
         return accounts.add(config["wallets"]["from_key"])
 
 
 def deploy_mocks():
-    print(f"The active network is {network.show_active()}")
-    print("Deploying Mocks...")
     if len(MockV3Aggregator) <= 0:
         MockV3Aggregator.deploy(DECIMALS, STARTING_PRICE, {"from": get_account()})
     print("Mocks Deployed!")
+
+
+# MockV3Aggregator.deploy(8, 200000000000, {"from":})
