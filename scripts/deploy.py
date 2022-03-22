@@ -30,6 +30,7 @@ def deploy_fund_me():
     print(f'Price_feed_address is {price_feed_address}')
     print(f'From account is {account}')
     print(f'Contract deployed to {fund_me.address}')
+    print(f'For second git commit')
     print(f'\n\n')
 
     return fund_me
